@@ -26,6 +26,7 @@
     emailjs.init('il3mBqTbbUGind1B5');
 
     function sendMail() {
+      debugger
       var element = document.getElementById("spinner");
       var params = {
         name: document.getElementById("name").value,
@@ -145,8 +146,7 @@
     </div>
   </div>
   <div id="container-id" class="container-id d-none">
-    <div class="spinner d-none" id="spinner"></div>
-
+   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">joseiba</a>
@@ -185,7 +185,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12 col-md-5 col-lg-6 order-md-2">
-              <img src="static/2.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate" alt="..."
+              <img src="static/home1.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate" alt="..."
                 data-aos="fade-up" data-aos-delay="100">
 
             </div>
@@ -534,12 +534,14 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex pb-3 align-items-stretch">
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
             <div class="icon-box">
-              <img class="div-img-ser" src="static/por1.jpeg" alt="">
+              <div class="col-12">
+                <img class="div-img-ser" src="static/por1.jpeg" alt="">
+              </div>
               <h4 class="pt-3 class text-white">Turnero</h4>
               <p class="text-white">Turnero is a web application that basically encodes the shifts that are given to
-                customers</p>
+                customers.</p>
               <button class="button-class mt-3">
                 <a class="a-button" href="https://gitlab.com/joseiba/turnero" target="_blank">
                   View code
@@ -548,12 +550,12 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex pb-3 align-items-stretch">
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
             <div class="icon-box">
               <img class="div-img-ser" src="static/por2.jpeg" alt="">
               <h4 class="pt-3 class text-white">Veterinary system</h4>
               <p class="text-white">Veterinary system that manages various aspects such as medical consultations,
-                appointments, records, etc</p>
+                appointments, records, etc.</p>
               <button class="button-class mt-3">
                 <a class="a-button" href="https://github.com/joseiba/VetOho" target="_blank">
                   View code
@@ -562,11 +564,11 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex pb-3 align-items-stretch">
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
             <div class="icon-box">
               <img class="div-img-ser" src="static/por3.jpeg" alt="">
               <h4 class="pt-3 class text-white">Coffee shop menu</h4>
-              <p class="text-white">This web application displays the menu and takes orders</p>
+              <p class="text-white">This web application displays the menu and takes orders, in a very simple way.</p>
               <button class="button-class mt-3">
                 <a class="a-button" href="https://gitlab.com/joseiba/menu-cafeteria" target="_blank">
                   View code
@@ -586,6 +588,8 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact pt-3 pr-pl-2 pb-3">
+      <div class="spinner-grow text-success2 d-none" id="spinner" role="status">
+      </div>
       <div class="container">
 
         <div class="section-title">

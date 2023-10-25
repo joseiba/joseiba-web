@@ -812,13 +812,14 @@ ul>li {
 
 
 .div-img-ser {
-    width: 300px;
+    width: 287px;
     height: 170px;
     border-radius: 6px;
 }
 
 .button-class {
-    background-color: var(--principal);/* Green */
+    background-color: var(--principal);
+    /* Green */
     border: 1px solid var(--principal);
     border-radius: 8px;
     color: var(--text-principal);
@@ -828,20 +829,20 @@ ul>li {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-  }
+}
 
 
-  .a-button{
+.a-button {
     color: var(--text-principal);
     text-decoration: none;
-  }
+}
 
-  .a-button:hover{
+.a-button:hover {
     color: var(--text-principal);
-  }
-  
+}
 
- /*--------------------------------------------------------------
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact .info-box {
@@ -849,85 +850,85 @@ ul>li {
     padding: 20px;
     width: 100%;
     background: rgba(255, 255, 255, 0.08);
-  }
-  
-  .contact .info-box i.bx {
+}
+
+.contact .info-box i.bx {
     font-size: 24px;
     color: #18d26e;
     border-radius: 50%;
     padding: 14px;
     float: left;
     background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .contact .info-box h3 {
+}
+
+.contact .info-box h3 {
     font-size: 20px;
     color: rgba(255, 255, 255, 0.5);
     font-weight: 700;
     margin: 10px 0 8px 68px;
-  }
-  
-  .contact .info-box p {
+}
+
+.contact .info-box p {
     padding: 0;
     color: #fff;
     line-height: 24px;
     font-size: 14px;
     margin: 0 0 0 68px;
-  }
-  
-  .contact .info-box .social-links {
+}
+
+.contact .info-box .social-links {
     margin: 5px 0 0 68px;
     display: flex;
-  }
-  
-  .contact .info-box .social-links a {
+}
+
+.contact .info-box .social-links a {
     font-size: 18px;
     display: inline-block;
     color: #fff;
     line-height: 1;
     margin-right: 12px;
     transition: 0.3s;
-  }
-  
-  .contact .info-box .social-links a:hover {
+}
+
+.contact .info-box .social-links a:hover {
     color: #18d26e;
-  }
-  
-  .contact .php-email-form {
+}
+
+.contact .php-email-form {
     padding: 30px;
     background: rgba(255, 255, 255, 0.08);
-  }
-  
-  .contact .php-email-form .error-message {
+}
+
+.contact .php-email-form .error-message {
     display: none;
     background: rgba(255, 255, 255, 0.08);
     background: #ed3c0d;
     text-align: left;
     padding: 15px;
     font-weight: 600;
-  }
-  
-  .contact .php-email-form .error-message br+br {
+}
+
+.contact .php-email-form .error-message br+br {
     margin-top: 25px;
-  }
-  
-  .contact .php-email-form .sent-message {
+}
+
+.contact .php-email-form .sent-message {
     display: none;
     background: rgba(255, 255, 255, 0.08);
     background: #18d26e;
     text-align: center;
     padding: 15px;
     font-weight: 600;
-  }
-  
-  .contact .php-email-form .loading {
+}
+
+.contact .php-email-form .loading {
     display: none;
     background: rgba(255, 255, 255, 0.08);
     text-align: center;
     padding: 15px;
-  }
-  
-  .contact .php-email-form .loading:before {
+}
+
+.contact .php-email-form .loading:before {
     content: "";
     display: inline-block;
     border-radius: 50%;
@@ -937,10 +938,10 @@ ul>li {
     border: 3px solid #18d26e;
     border-top-color: #eee;
     animation: animate-loading 1s linear infinite;
-  }
-  
-  .contact .php-email-form input,
-  .contact .php-email-form textarea {
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
@@ -948,47 +949,47 @@ ul>li {
     border: 0;
     transition: 0.3s;
     color: #fff;
-  }
-  
-  .contact .php-email-form input:focus,
-  .contact .php-email-form textarea:focus {
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
     background-color: rgba(255, 255, 255, 0.11);
-  }
-  
-  .contact .php-email-form input::-moz-placeholder,
-  .contact .php-email-form textarea::-moz-placeholder {
+}
+
+.contact .php-email-form input::-moz-placeholder,
+.contact .php-email-form textarea::-moz-placeholder {
     color: rgba(255, 255, 255, 0.3);
     opacity: 1;
-  }
-  
-  .contact .php-email-form input::placeholder,
-  .contact .php-email-form textarea::placeholder {
+}
+
+.contact .php-email-form input::placeholder,
+.contact .php-email-form textarea::placeholder {
     color: rgba(255, 255, 255, 0.3);
     opacity: 1;
-  }
-  
-  .contact .php-email-form input {
+}
+
+.contact .php-email-form input {
     padding: 10px 15px;
-  }
-  
-  .contact .php-email-form textarea {
+}
+
+.contact .php-email-form textarea {
     padding: 12px 15px;
-  }
-  
-  .contact .php-email-form button[type=button] {
+}
+
+.contact .php-email-form button[type=button] {
     background: var(--principal);
     border: 0;
     padding: 10px 30px;
     color: #fff;
     transition: 0.4s;
     border-radius: 4px;
-  }
-  
-  .contact .php-email-form button[type=button]:hover {
-    background: var(--principal);
-  }
+}
 
-  .bx {
+.contact .php-email-form button[type=button]:hover {
+    background: var(--principal);
+}
+
+.bx {
     font-weight: 400;
     font-style: normal;
     font-variant: normal;
@@ -1001,40 +1002,53 @@ ul>li {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.mr-3{
+.mr-3 {
     margin-right: 1rem;
 }
-  
-  @keyframes animate-loading {
+
+@keyframes animate-loading {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
-  
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  } 
+}
 
-/*
-  spinner de carga
-*/
+#spinner {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+}
 
-.spinner {
-    width: 36px;
-    height: 36px;
-    border: 5px solid rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    border-left-color: var(--principal);
-    animation: spin 1s ease infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+@media screen and (max-width: 915px) {
+    .box-shadow{
+        text-align: center;
     }
-  
-    100% {
-      transform: rotate(360deg);
+}
+
+.text-success2{
+    color: var(--principal) !important;
+}
+
+
+@media screen and (max-width: 375px) {
+    .div-img-ser {
+        width: 254px;
+        height: 170px;
+        border-radius: 6px;
     }
-  }
-  
+}
+
+
+ @media screen and (min-width: 1441px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 3010px !important;
+    }
+}

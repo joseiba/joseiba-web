@@ -2,35 +2,35 @@
 var $ = jQuery;
 var animationTime = 3.5,
     days = 7;
- 
-$(document).ready(function(){
+
+$(document).ready(function () {
 
     // timer arguments: 
     //   #1 - time of animation in mileseconds, 
     //   #2 - days to deadline
 
-    $('#progress-time-fill, #death-group').css({'animation-duration': animationTime+'s'});
+    $('#progress-time-fill, #death-group').css({ 'animation-duration': animationTime + 's' });
 
     var deadlineAnimation = function () {
-        setTimeout(function(){
-            $('#designer-arm-grop').css({'animation-duration': '1.5s'});
-        },0);
+        setTimeout(function () {
+            $('#designer-arm-grop').css({ 'animation-duration': '1.5s' });
+        }, 0);
 
-        setTimeout(function(){
-            $('#designer-arm-grop').css({'animation-duration': '1s'});
-        },4000);
+        setTimeout(function () {
+            $('#designer-arm-grop').css({ 'animation-duration': '1s' });
+        }, 4000);
 
-        setTimeout(function(){
-            $('#designer-arm-grop').css({'animation-duration': '0.7s'});
-        },8000);
+        setTimeout(function () {
+            $('#designer-arm-grop').css({ 'animation-duration': '0.7s' });
+        }, 8000);
 
-        setTimeout(function(){
-            $('#designer-arm-grop').css({'animation-duration': '0.3s'});
-        },12000);
+        setTimeout(function () {
+            $('#designer-arm-grop').css({ 'animation-duration': '0.3s' });
+        }, 12000);
 
-        setTimeout(function(){
-            $('#designer-arm-grop').css({'animation-duration': '0.2s'});
-        },15000);
+        setTimeout(function () {
+            $('#designer-arm-grop').css({ 'animation-duration': '0.2s' });
+        }, 15000);
     };
 
     function timer(totalTime, deadline) {
@@ -60,8 +60,8 @@ $(document).ready(function(){
     deadlineText();
     deadlineAnimation();
     timer(animationTime, days);
-  
-    setInterval(function(){
+
+    setInterval(function () {
         //timer(animationTime, days);
         //deadlineAnimation();
 
@@ -70,7 +70,7 @@ $(document).ready(function(){
         var element = document.getElementById("deadline");
         element.classList.add("d-none");
         var element = document.getElementById("container-id");
-        element.classList.remove("d-none");        
+        element.classList.remove("d-none");
     }, animationTime * 1000);
 
 });
