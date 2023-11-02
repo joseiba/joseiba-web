@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>joseiba</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="fonts/bootstrap-icons/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/navbar.js"></script>
+
+  <script type="text/javascript">
+    emailjs.init('il3mBqTbbUGind1B5');
+
+    function sendMail() {
+      var element = document.getElementById("spinner");
+      var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+      };
+
+      const serviceID = "service_so3ms8m";
+      const templateID = "template_gfgyai3";
+
+      if (params.email != "" && params.name != "" && params.message != "" && params.subject != "") {
+        element.classList.remove("d-none");
+
+        emailjs.send(serviceID, templateID, params)
+          .then(res => {
+            element.classList.add("d-none");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("subject").value = "";
+            console.log(res); 0
+            Swal.fire({
+              icon: 'success',
+              title: 'Mail sent',
+            })
+
+          })
+          .catch(err => console.log(err));
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="deadline">
+    <svg preserveAspectRatio="none" id="line" viewBox="0 0 581 158" enable-background="new 0 0 581 158">
+      <g id="fire">
+        <rect id="mask-fire-black" x="511" y="41" width="38" height="34" />
+        <g>
+          <defs>
+            <rect id="mask_fire" x="511" y="41" width="38" height="34" />
+          </defs>
+          <clipPath id="mask-fire_1_">
+            <use xlink:href="#mask_fire" overflow="visible" />
+          </clipPath>
+          <g id="group-fire" clip-path="url(#mask-fire_1_)">
+            <path id="red-flame" fill="#B71342"
+              d="M528.377,100.291c6.207,0,10.947-3.272,10.834-8.576 c-0.112-5.305-2.934-8.803-8.237-10.383c-5.306-1.581-3.838-7.9-0.79-9.707c-7.337,2.032-7.581,5.891-7.11,8.238 c0.789,3.951,7.56,4.402,5.077,9.48c-2.482,5.079-8.012,1.129-6.319-2.257c-2.843,2.233-4.78,6.681-2.259,9.703 C521.256,98.809,524.175,100.291,528.377,100.291z" />
+            <path id="yellow-flame" opacity="0.71" fill="#F7B523"
+              d="M528.837,100.291c4.197,0,5.108-1.854,5.974-5.417 c0.902-3.724-1.129-6.207-5.305-9.931c-2.396-2.137-1.581-4.176-0.565-6.32c-4.401,1.918-3.384,5.304-2.482,6.658 c1.511,2.267,2.099,2.364,0.42,5.8c-1.679,3.435-5.42,0.764-4.275-1.527c-1.921,1.512-2.373,4.04-1.528,6.563 C522.057,99.051,525.994,100.291,528.837,100.291z" />
+            <path id="white-flame" opacity="0.81" fill="#FFFFFF"
+              d="M529.461,100.291c-2.364,0-4.174-1.322-4.129-3.469 c0.04-2.145,1.117-3.56,3.141-4.198c2.022-0.638,1.463-3.195,0.302-3.925c2.798,0.821,2.89,2.382,2.711,3.332 c-0.301,1.597-2.883,1.779-1.938,3.834c0.912,1.975,3.286,0.938,2.409-0.913c1.086,0.903,1.826,2.701,0.864,3.924 C532.18,99.691,531.064,100.291,529.461,100.291z" />
+          </g>
+        </g>
+      </g>
+      <g id="progress-trail">
+        <path fill="#FFFFFF"
+          d="M491.979,83.878c1.215-0.73-0.62-5.404-3.229-11.044c-2.583-5.584-5.034-10.066-7.229-8.878
+                                        c-2.854,1.544-0.192,6.286,2.979,11.628C487.667,80.917,490.667,84.667,491.979,83.878z" />
+        <path fill="#FFFFFF"
+          d="M571,76v-5h-23.608c0.476-9.951-4.642-13.25-4.642-13.25l-3.125,4c0,0,3.726,2.7,3.625,5.125
+                                        c-0.071,1.714-2.711,3.18-4.962,4.125H517v5h10v24h-25v-5.666c0,0,0.839,0,2.839-0.667s6.172-3.667,4.005-6.333
+                                        s-7.49,0.333-9.656,0.166s-6.479-1.5-8.146,1.917c-1.551,3.178,0.791,5.25,5.541,6.083l-0.065,4.5H16c-2.761,0-5,2.238-5,5v17
+                                        c0,2.762,2.239,5,5,5h549c2.762,0,5-2.238,5-5v-17c0-2.762-2.238-5-5-5h-3V76H571z" />
+        <path fill="#FFFFFF" d="M535,65.625c1.125,0.625,2.25-1.125,2.25-1.125l11.625-22.375c0,0,0.75-0.875-1.75-2.125
+                                        s-3.375,0.25-3.375,0.25s-8.75,21.625-9.875,23.5S533.875,65,535,65.625z" />
+      </g>
+      <g>
+        <defs>
+          <path id="SVGID_1_" d="M484.5,75.584c-3.172-5.342-5.833-10.084-2.979-11.628c2.195-1.188,4.646,3.294,7.229,8.878
+                                        c2.609,5.64,4.444,10.313,3.229,11.044C490.667,84.667,487.667,80.917,484.5,75.584z M571,76v-5h-23.608
+                                        c0.476-9.951-4.642-13.25-4.642-13.25l-3.125,4c0,0,3.726,2.7,3.625,5.125c-0.071,1.714-2.711,3.18-4.962,4.125H517v5h10v24h-25
+                                        v-5.666c0,0,0.839,0,2.839-0.667s6.172-3.667,4.005-6.333s-7.49,0.333-9.656,0.166s-6.479-1.5-8.146,1.917
+                                        c-1.551,3.178,0.791,5.25,5.541,6.083l-0.065,4.5H16c-2.761,0-5,2.238-5,5v17c0,2.762,2.239,5,5,5h549c2.762,0,5-2.238,5-5v-17
+                                        c0-2.762-2.238-5-5-5h-3V76H571z M535,65.625c1.125,0.625,2.25-1.125,2.25-1.125l11.625-22.375c0,0,0.75-0.875-1.75-2.125
+                                        s-3.375,0.25-3.375,0.25s-8.75,21.625-9.875,23.5S533.875,65,535,65.625z" />
+        </defs>
+        <clipPath id="SVGID_2_">
+          <use xlink:href="#SVGID_1_" overflow="visible" />
+        </clipPath>
+        <rect id="progress-time-fill" x="-100%" y="34" clip-path="url(#SVGID_2_)" fill="#10c548" width="586"
+          height="103" />
+      </g>
+
+      <g id="death-group">
+        <!--<path id="death" fill="#BE002A" d="M-46.25,40.416c-5.42-0.281-8.349,3.17-13.25,3.918c-5.716,0.871-10.583-0.918-10.583-0.918
+                                                    C-67.5,49-65.175,50.6-62.083,52c5.333,2.416,4.083,3.5,2.084,4.5c-16.5,4.833-15.417,27.917-15.417,27.917L-75.5,84.75
+                                                    c-1,12.25-20.25,18.75-20.25,18.75s39.447,13.471,46.25-4.25c3.583-9.333-1.553-16.869-1.667-22.75
+                                                    c-0.076-3.871,2.842-8.529,6.084-12.334c3.596-4.22,6.958-10.374,6.958-15.416C-38.125,43.186-39.833,40.75-46.25,40.416z
+                                                    M-40,51.959c-0.882,3.004-2.779,6.906-4.154,6.537s-0.939-4.32,0.112-7.704c0.82-2.64,2.672-5.96,3.959-5.583
+                                                    C-39.005,45.523-39.073,48.8-40,51.959z"/>
+                <path id="death-arm" fill="#BE002A" d="M-53.375,75.25c0,0,9.375,2.25,11.25,0.25s2.313-2.342,3.375-2.791
+                                                        c1.083-0.459,4.375-1.75,4.292-4.75c-0.101-3.627,0.271-4.594,1.333-5.043c1.083-0.457,2.75-1.666,2.75-1.666
+                                                        s0.708-0.291,0.5-0.875s-0.791-2.125-1.583-2.959c-0.792-0.832-2.375-1.874-2.917-1.332c-0.542,0.541-7.875,7.166-7.875,7.166
+                                                        s-2.667,2.791-3.417,0.125S-49.833,61-49.833,61s-3.417,1.416-3.417,1.541s-1.25,5.834-1.25,5.834l-0.583,5.833L-53.375,75.25z"/>
+                <path id="death-tool" fill="#BE002A" d="M-20.996,26.839l-42.819,91.475l1.812,0.848l38.342-81.909c0,0,8.833,2.643,12.412,7.414
+                                                        c5,6.668,4.75,14.084,4.75,14.084s4.354-7.732,0.083-17.666C-10,32.75-19.647,28.676-19.647,28.676l0.463-0.988L-20.996,26.839z"/>-->
+      </g>
+      <path id="designer-body" fill="#FEFFFE" d="M514.75,100.334c0,0,1.25-16.834-6.75-16.5c-5.501,0.229-5.583,3-10.833,1.666
+                                                        c-3.251-0.826-5.084-15.75-0.834-22c4.948-7.277,12.086-9.266,13.334-7.833c2.25,2.583-2,10.833-4.5,14.167
+                                                        c-2.5,3.333-1.833,10.416,0.5,9.916s8.026-0.141,10,2.25c3.166,3.834,4.916,17.667,4.916,17.667l0.917,2.5l-4,0.167L514.75,100.334z
+                                                        " />
+
+      <circle id="designer-head" fill="#FEFFFE" cx="516.083" cy="53.25" r="6.083" />
+
+      <g id="designer-arm-grop">
+        <path id="designer-arm" fill="#FEFFFE"
+          d="M505.875,64.875c0,0,5.875,7.5,13.042,6.791c6.419-0.635,11.833-2.791,13.458-4.041s2-3.5,0.25-3.875
+                                                            s-11.375,5.125-16,3.25c-5.963-2.418-8.25-7.625-8.25-7.625l-2,1.125L505.875,64.875z" />
+        <path id="designer-pen" fill="#FEFFFE" d="M525.75,59.084c0,0-0.423-0.262-0.969,0.088c-0.586,0.375-0.547,0.891-0.547,0.891l7.172,8.984l1.261,0.453
+                                                            l-0.104-1.328L525.75,59.084z" />
+      </g>
+    </svg>
+
+    <div class="deadline-days">
+      Loading <span class="day">7</span> <span class="days">days</span>
+    </div>
+  </div>
+  <div id="container-id" class="container-id d-none">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">joseiba</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#about">About me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#skill">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#expe">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#services">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#contact">Contact me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-6 pr-pl-2 fondo">
+      <div class="row row-deck row-cards">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2">
+              <img src="static/home1.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0 aos-init aos-animate"
+                alt="..." data-aos="fade-up" data-aos-delay="100">
+
+            </div>
+
+            <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate " data-aos="fade-up">
+              <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-8">
+                <p class="box-shadow mt-4"> <span class="space">🚀 </span> hello everyone!, i'm Jose</p>
+
+              </div>
+
+              <h1 class="display-3 text-center text-md-start text-white f-w mb-0">
+                A <span class="text-green">System Analyst</span> & <span class="text-green">Computer
+                  Programmer</span>.
+              </h1>
+
+              <div>
+                <p class="lead text-center text-md-start mb-6 mb-lg-8 text-white mb-0">
+                  I invite you to get to know me a little more about me.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-12 order-md-3">
+              <span class="scroll-btn mt-4">
+                <a href="#">
+                  <span class="mouse">
+                    <span>
+                    </span>
+                  </span>
+                </a>
+                <p>scroll me</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- About section -->
+    <section id="about" class="about pt-3 pr-pl-2 pb-3 ">
+      <!-- ======= About Me ======= -->
+      <div class="about-me container">
+
+        <div class="section-title">
+          <h2 class="text-white">About me</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="static/libro.gif" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3 class=" text-green">System Analyst &amp; Computer Programmer</h3>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul style="padding-left: 0 !important;">
+                  <li><i class="bi bi-chevron-right "></i> <strong class="text-white">Birthday:</strong> <span
+                      class="text-white">10 Oct 1996</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong class="text-white">Website:</strong> <span
+                      class="text-white">www.example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong class="text-white">City:</strong> <span
+                      class="text-white">San Lorenzo, Paraguay</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul style="padding-left: 0 !important;">
+                  <li><i class="bi bi-chevron-right "></i> <strong class="text-white">Degree:</strong> <span
+                      class="text-white">Computer Science</span></li>
+                  <li><i class="bi bi-chevron-right "></i> <strong class="text-white">Email:</strong> <span
+                      class="text-white">joseibanhezlopez@gmail.com</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="text-white">
+              Degree in Computer Science with emphasis in Computer Systems Analysis and Computer Programming,
+              with more than 3 years of experience in analysis, maintenance and software development in the financial
+              core.
+              I have experience in creating quality code, following the best development practices and design patterns
+              using software engineering as a fundamental basis, accompanied by agile methodologies.
+              I am interested in challenges where I can learn new technologies and tools that lead me to challenge
+              myself more in problem solving.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- End About Me -->
+    </section><!-- End About Section -->
+
+    <!-- Skills section -->
+    <section id="skill" class="skill pt-3 pr-pl-2 pb-3 ">
+      <div class="about-me container">
+
+        <div class="section-title">
+          <h2 class="text-white">Skills</h2>
+        </div>
+        <div class="row">
+          <div class="skills-section">
+            <div class="skills-container">
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/html5.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">HTML 5</p>
+                </div>
+              </div>
+
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/CSS3.svg" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">CSS3</p>
+                </div>
+              </div>
+
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/js.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">JAVASCRIPT</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/angular.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">ANGULAR</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/net.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">.NET</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/python.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">PYTHON</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/django.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">DJANGO</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/postgres.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">POSTGRESQL</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/oracle.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">ORACLE</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/sqlserver.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">SQL SERVER</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/mongo.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">MONGO</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/react.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">REACT</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/java.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">JAVA</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/spring.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">SPRING BOOT</p>
+                </div>
+              </div>
+
+              <div class="skills-box">
+                <div class="skills-title">
+                  <div class="skills-img">
+                    <img src="static/git.png" alt="" class="skills-icons">
+                  </div>
+                  <p class="text-white">GIT</p>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Experience Section ======= -->
+    <section id="expe" class="resume pt-3 pr-pl-2 pb-3">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="text-white">Experience</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h4 class="text-white mt-3 mb-3">Education</h4>
+            <div class="resume-item">
+              <h4>Degree in Computer Science, emphasis in computer programming.</h4>
+              <p class="text-white">2021 - 2023</p>
+              <p class="text-white"><em>National University of Asuncion, San Lorenzo, Paraguay</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Degree in Computer Science, emphasis in Computer Systems Analysis.</h4>
+              <p class="text-white">2016 - 2021</p>
+              <p class="text-white"><em>National University of Asuncion, San Lorenzo, Paraguay</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h4 class="text-white mt-3 mb-3">Professional Experience</h4>
+            <div class="resume-item">
+              <h4>Analyst & Programmer</h4>
+              <p class="text-white">July 2020 - Present</p>
+              <p class="text-white"><em>Roshka - Itau Paraguay Bank, Asunción, Paraguay </em></p>
+              <p>
+              <ul>
+                <li class="text-white">Maintenance and development of Front End projects for accounts, credit cards and
+                  loans.</li>
+                <li class="text-white">Development of new SOAP and REST services, based on design patterns. </li>
+                <li class="text-white">Re-engineering of Service Payments.</li>
+                <li class="text-white">Unit tests that guarantee the correct functionality of the services.</li>
+                <li class="text-white">Implementation of asynchronous tasks.</li>
+                <li class="text-white">Analysis and corrections within financial systems through error logs.</li>
+                <li class="text-white">Git Master</li>
+                <li class="text-white">Technologies and Tools: Angular, .Net Framework, Spring Boot, Css, Html,
+                  Javascript, Postman, Insomnia rest, Bootstrap,
+                  Oracle, SQL Server, Jenkins, Jasmine, Jasmine, Spring Boot.
+                  Server, Jenkins, Jasmine, Selenium, SonarQube, Figma, Git and Jira.
+                </li>
+              </ul>
+              </p>
+            </div>
+            <div class="resume-item">
+              <h4>Software Developer</h4>
+              <p class="text-white">April 2020 - July 2020</p>
+              <p class="text-white"><em>Continental Bank, Asunción, Paraguay </em></p>
+              <p>
+              <ul>
+                <li class="text-white">Web, Back-End and Front-End Enhancements.</li>
+                <li class="text-white">Building Web Services and APIs.</li>
+                <li class="text-white">Oracle and PLSQL database.</li>
+                <li class="text-white">Technologies and Tools: .Net Framework, Css, Html, Javascript, Postman,
+                  Bootstrap, Oracle, Git and Azure DevOps.</li>
+              </ul>
+              </p>
+            </div>
+            <div class="resume-item">
+              <h4>Web Developer</h4>
+              <p class="text-white">January 2020 - April 2020</p>
+              <p class="text-white"><em>Software Natura - Internship, Asunción, Paraguay </em></p>
+              <p>
+              <ul>
+                <li class="text-white">Improvements of functionalities in projects of number of applicants.</li>
+                <li class="text-white">Database creation, queries, insertions and updates.</li>
+                <li class="text-white">UX design.</li>
+                <li class="text-white">Technologies and Tools: Java 8, Spring Boot, Angular, Css, Html, TypeScript,
+                  Jasmine, PostgreSQL ,Junit, Docker, Figma, Postman, Git and Jira.</li>
+              </ul>
+              </p>
+            </div>
+            <button class="button-class mt-3 mr-3 cv-dowload">
+              <a class="a-button"
+                href="https://drive.google.com/file/d/179iLn2ku4wE48dKNFvszh3K8aSkEG62O/view?usp=sharing"
+                target="_blank">
+                Download CV
+              </a>
+            </button>
+            <!-- <button class="button-class mt-3">
+              <a class="a-button" href="#">
+                Download CV English
+              </a>
+            </button> -->
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Experience Section -->
+
+    <!-- ======= Projects Section ======= -->
+    <section id="services" class="services pt-3 pr-pl-2 pb-3">
+      <div class="container">
+
+        <div class="section-title mb-3">
+          <h2 class="text-white">Projects</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
+            <div class="icon-box">
+              <div class="col-12">
+                <img class="div-img-ser" src="static/por1.jpeg" alt="">
+              </div>
+              <h4 class="pt-3 class text-white">Turnero</h4>
+              <p class="text-white">Turnero is a web application that basically encodes the shifts that are given to
+                customers.</p>
+              <button class="button-class mt-3">
+                <a class="a-button" href="https://gitlab.com/joseiba/turnero" target="_blank">
+                  View code
+                </a>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
+            <div class="icon-box">
+              <img class="div-img-ser" src="static/por2.jpeg" alt="">
+              <h4 class="pt-3 class text-white">Veterinary system</h4>
+              <p class="text-white">Veterinary system that manages various aspects such as medical consultations,
+                appointments, records, etc.</p>
+              <button class="button-class mt-3">
+                <a class="a-button" href="https://github.com/joseiba/VetOho" target="_blank">
+                  View code
+                </a>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 pb-3 align-items-stretch">
+            <div class="icon-box">
+              <img class="div-img-ser" src="static/por3.jpeg" alt="">
+              <h4 class="pt-3 class text-white">Coffee shop menu</h4>
+              <p class="text-white">This web application displays the menu and takes orders, in a very simple way.</p>
+              <button class="button-class mt-3">
+                <a class="a-button" href="https://gitlab.com/joseiba/menu-cafeteria" target="_blank">
+                  View code
+                </a>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="button-class mt-3" style="display: flex; margin: 0 auto;">
+          <a class="a-button" href="https://github.com/joseiba" target="_blank">
+            View more
+          </a>
+        </button>
+    </section><!-- End Projects Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact pt-3 pr-pl-2 pb-3">
+      <div class="spinner-grow text-success2 d-none" id="spinner" role="status">
+      </div>
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="text-white">Contact</h2>
+        </div>
+
+        <div class="row mt-2">
+
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="info-box">
+              <i class="bx bi-envelope-at"></i>
+              <h3 class="text-white">Email Me</h3>
+              <p>joseibanhezlopez@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
+            <div class="info-box">
+              <i class="bx bi-share"></i>
+              <h3 class="text-white">Profiles</h3>
+              <div class="social-links">
+                <a href="https://x.com/joseaiba8?t=D4fVurvToYYERYSeUqrwAw&s=09" target="_blank" class="twitter"><i
+                    class="bi bi-twitter-x"></i></a>
+                <a href="https://www.facebook.com/jose.ibanez.775?mibextid=ZbWKwL" target="_blank" class="facebook"><i
+                    class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/joseibaa?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="instagram"><i
+                    class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/joseiba/" target="_blank" class="linkedin"><i
+                    class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/joseiba" target="_blank" class="linkedin"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form role="form" class="php-email-form mt-4">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"
+              required></textarea>
+          </div>
+          <div class="text-center mt-3"><button type="button" onclick=sendMail()>Send Message</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+  </div>
+</body>
+
+</html>
