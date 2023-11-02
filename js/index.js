@@ -61,12 +61,7 @@ $(document).ready(function () {
     deadlineAnimation();
     timer(animationTime, days);
 
-    setInterval(function () {
-        //timer(animationTime, days);
-        //deadlineAnimation();
-
-        //console.log('begin interval', animationTime * 1000);
-        //console.log(days);
+    setInterval(function () {      
         var element = document.getElementById("deadline");
         element.classList.add("d-none");
         var element = document.getElementById("container-id");
